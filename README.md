@@ -1,1 +1,1 @@
-half of this isnt chatgpt trust
+half of this code isnt chatgpt trust
