@@ -15,7 +15,6 @@
     --second-color: rgb(110, 87, 224);
     --third-color: rgb(39, 39, 39);
     --first-shadow-color: rgba(0, 0, 0, 0.1);
-
 }
 
 /* ----- BASE ----- */
@@ -46,7 +45,6 @@ html{
 ::-webkit-scrollbar-thumb:hover{
     background: #bbb;
 }
-
 
 /* ---##-- REUSABLE CSS --##--- */
 
@@ -148,7 +146,6 @@ nav{
     border-radius: 50%;
 }
 
- 
 /* ----- WRAPPER DESIGN ----- */
 .wrapper{
     padding-inline: 10vw;
@@ -158,6 +155,7 @@ nav{
 .featured-box{
     position: relative;
     display: flex;
+    align-items: center;
     height: 100vh;
     min-height: 700px;
 }
@@ -168,10 +166,9 @@ nav{
     display: flex;
     justify-content: center;
     align-content: center;
-    min-height: 80vh;
     flex-direction: column;
     width: 50%;
-    padding-left: 20px;
+    padding-right: 20px;
 }
 .featured-text-card span{
     background: var(--third-color);
@@ -226,31 +223,13 @@ nav{
 }
 
 /* ----- FEATURED IMAGE BOX ----- */
-.featured-image{
-    display: flex;
-    justify-content: right;
-    align-content: center;
-    min-height: 80vh;
-    width: 50%;
-}
-.image{
-    margin: auto 0;
-    width: 380px;
-    height: 380px;
-    border-radius: 55% 45% 55% 45%;
-    overflow: hidden;
-    animation: imgFloat 7s ease-in-out infinite;
-}
-.image img{
-    width: 380px;
-    height: 380px;
-    object-fit: cover;
-}
-@keyframes imgFloat {
-    50%{
-        transform: translateY(10px);
-        border-radius: 45% 55% 45% 55%;
-    }
+.featured-image {
+    max-width: 60%;
+    max-height: 80vh;
+    width: 2000px;
+    height: 2000px;
+    margin-left: 20px;
+    object-fit: contain;
 }
 .scroll-btn{
    position: absolute;
@@ -304,7 +283,7 @@ nav{
 h3{
     font-size: 20px;
     font-weight: 600;
-    color: var(--text-color-second);
+    color: var (--text-color-second);
     margin-bottom: 15px;
 }
 
