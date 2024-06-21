@@ -323,6 +323,7 @@ h3{
 }
 .skills-header{
     margin-bottom: 30px;
+    color: var(--color-white)
 }
 .skills-list{
     display: flex;
