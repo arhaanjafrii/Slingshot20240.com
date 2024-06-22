@@ -36,14 +36,14 @@ html{
     border-radius: 25px;
 }
 ::-webkit-scrollbar-track{
-    background: #f1f1f1;
+    background: #fff;
 }
 ::-webkit-scrollbar-thumb{
-    background: #ccc;
+    background: #949494;
     border-radius: 30px;
 }
 ::-webkit-scrollbar-thumb:hover{
-    background: #bbb;
+    background: #949494;
 }
 
 /* ---##-- REUSABLE CSS --##--- */
@@ -231,7 +231,7 @@ nav{
     margin-left: 20px;
     object-fit: contain;
 }
-.scroll-btn{
+.scroll-btn{    
    position: absolute;
    bottom: 0;
    left: 50%;
@@ -429,6 +429,8 @@ h3{
 }
 
 /* ----- CONTACT FORM ----- */
+
+
 .form-control{
     display: flex;
     flex-direction: column;
