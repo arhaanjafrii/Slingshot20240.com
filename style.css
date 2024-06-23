@@ -3,12 +3,12 @@
 
 /* ----- VARIABLES ----- */
 :root{
-    --body-color: rgba(0, 0, 0, 0.973);
+    --body-color: rgba(0, 0, 0, 0.92);
     --color-white: rgb(255, 255, 255);
 
     --text-color-second: rgb(255, 255, 255);
     --text-color-third: rgb(110, 87, 224);
-
+    
     --first-color: rgb(110, 87, 224);
     --first-color-hover: rgb(57, 45, 119);
 
@@ -81,60 +81,71 @@ body{
 }
 
 /* ----- NAVIGATION BAR ----- */
-nav{
+nav {
     position: fixed;
     display: flex;
     justify-content: space-between;
     width: 100%;
     height: 90px;
     line-height: 90px;
-    background: var(--body-color);
+    background: transparent; /* Make the background transparent */
     padding-inline: 9vw;
     transition: .3s;
     z-index: 100;
 }
-.nav-logo{
-   position: relative;
+
+.nav-logo {
+    position: relative;
 }
-.nav-name{
+
+.nav-name {
     font-size: 30px;
     font-weight: 600;
     color: var(--text-color-third);
 }
-.nav-logo span{
+
+.nav-logo span {
     position: absolute;
     top: -15px;
     right: -20px;
     font-size: 5em;
     color: var(--text-color-second);
 }
-.nav-menu, .nav_menu_list{
+
+.nav-menu,
+.nav_menu_list {
     display: flex;
 }
-.nav-menu .nav_list{
+
+.nav-menu .nav_list {
     list-style: none;
     position: relative;
 }
-.nav-link{
+
+.nav-link {
     text-decoration: none;
     color: var(--text-color-second);
     font-weight: 500;
     padding-inline: 15px;
     margin-inline: 20px;
 }
-.nav-menu-btn{
+
+.nav-menu-btn {
     display: none;
 }
-.nav-menu-btn i{
+
+.nav-menu-btn i {
     font-size: 28px;
     cursor: pointer;
 }
-.active-link{
+
+.active-link {
     position: relative;
     color: var(--first-color);
-    transition: .3;
+    transition: .3s; /* Added 's' after .3 */
 }
-.active-link::after{
+
+.active-link::after {
     content: '';
     position: absolute;
     left: 50%;
@@ -144,6 +155,19 @@ nav{
     height: 5px;
     background: var(--first-color);
     border-radius: 50%;
+}
+
+/* Blur effect behind navigation bar */
+nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Adjust height to match your navigation bar height */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Adjust blur intensity as needed */
+    z-index: -1; /* Behind the content, but above the background */
 }
 
 /* ----- WRAPPER DESIGN ----- */
@@ -186,6 +210,9 @@ nav{
 .typedText{
     text-transform: capitalize;
     color: var(--text-color-third);
+    white-space: nowrap; /* Ensures text does not wrap */
+    overflow: hidden; /* Prevents overflow */
+    text-overflow: ellipsis; /* Shows ellipsis (...) when text overflows */
 }
 .featured-text-info{
     font-size: 15px;
@@ -221,7 +248,6 @@ nav{
 .icon:hover{
     color: var(--first-color);
 }
-
 /* ----- FEATURED IMAGE BOX ----- */
 .featured-image {
     max-width: 60%;
@@ -231,6 +257,8 @@ nav{
     margin-left: 20px;
     object-fit: contain;
 }
+
+
 .scroll-btn{    
    position: absolute;
    bottom: 0;
@@ -339,55 +367,71 @@ h3{
 }
 
 /* ----- PROJECTS BOX ----- */
-.project-container{
+.project-container {
     display: flex;
     width: 100%;
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
 }
-.project-box{
+
+.project-box {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 30%;
-    height: 250px;
+    height: 350px;
     background: var(--color-white);
     border-radius: 20px;
     box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
     overflow: hidden;
+    transition: box-shadow 0.4s ease;  /* Smooth transition for box-shadow */
 }
-.project-box>i{
+
+.project-box img {
+    max-width: 100%;
+    max-height: 150px;  /* Ensure the image doesn't exceed a certain height */
+    margin-bottom: 15px;  /* Adjust margin as needed */
+}
+
+.project-box>i {
     font-size: 50px;
     color: rgb(110, 87, 224);
-    margin-bottom: 25px;
+    margin-bottom: 15px;  /* Adjust margin as needed */
+    z-index: 2;  /* Ensure icon is above overlay */
 }
-.project-box label{
+
+.project-box h3 {
+    margin-bottom: 10px;  /* Adjust margin as needed */
+    z-index: 2;  /* Ensure header is above overlay */
+}
+
+.project-box label {
     font-size: 15px;
     color: #777;
+    margin-top: 5px;  /* Adjust margin as needed */
+    z-index: 2;  /* Ensure text is above overlay */
 }
-.project-box::after, .contact-info::after{
-    content: "";
+
+/* Hover effect for removing the overlay and adding glow */
+.project-box:hover::before {
+    background: rgba(255, 255, 255, 0);  /* Remove translucent overlay */
+}
+
+.project-box::before {
+    content: '';
     position: absolute;
-    bottom: -100%;
-    background: var(--second-color);
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    transition: .4s;
+    background: rgba(255, 255, 255, 0.3);  /* Lighter translucent white overlay */
+    transition: background 0.4s ease;  /* Smooth transition for background */
     z-index: 1;
 }
-.project-box:hover.project-box::after,
-.contact-info:hover.contact-info::after{
-    bottom: 0;
-}
-.project-box:hover.project-box i,
-.project-box:hover.project-box>h3,
-.project-box:hover.project-box>label{
-    color: var(--color-white);
-    z-index: 2;
-}
+
 
 /* ----- CONTACT BOX ----- */
 .contact-info{
@@ -417,15 +461,6 @@ h3{
 }
 .contact-info p>i{
     font-size: 18px;
-}
-.contact-info::after{
-    background: var(--color-white);
-}
-.contact-info:hover.contact-info h2,
-.contact-info:hover.contact-info p,
-.contact-info:hover.contact-info i{
-    color: #777;
-    z-index: 2;
 }
 
 /* ----- CONTACT FORM ----- */
@@ -475,8 +510,6 @@ textarea{
     font-size: 18px;
     rotate: -45deg;
 }
-
-
 
 /* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
 @media only screen and (max-width: 1024px){
