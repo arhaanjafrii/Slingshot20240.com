@@ -197,7 +197,7 @@ nav::before {
 .featured-text-card span{
     background: var(--third-color);
     color: var(--color-white);
-    padding: 3px 8px;
+    padding: 3px 8px    ;
     font-size: 12px;
     border-radius: 5px;
 }
@@ -216,6 +216,7 @@ nav::before {
 }
 .featured-text-info{
     font-size: 15px;
+    width:1000px;
     margin-bottom: 30px;
     color: var(--text-color-second);
 }
@@ -618,4 +619,3 @@ textarea{
     }
     
 }
-
