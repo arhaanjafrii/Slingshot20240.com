@@ -1,97 +1,94 @@
-/* ----- POPPINS FONT Link ----- */
+/* Poppins font link. poppins = best font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* ----- VARIABLES ----- */
+/* ----- Variables (because keeping colors in one place is so profrsssional im the coding goat boomshakalaka) ----- */
 :root{
-    --body-color: rgba(0, 0, 0, 0.92);
-    --color-white: rgb(255, 255, 255);
-
-    --text-color-second: rgb(255, 255, 255);
-    --text-color-third: rgb(110, 87, 224);
+    --body-color: rgba(0, 0, 0, 0.92); /* Basic dark color for body */
+    --color-white: rgb(255, 255, 255); /* Obvious white color for text */
+    --text-color-second: rgb(255, 255, 255); /* Again, white for text */
+    --text-color-third: rgb(110, 87, 224); /* Purple-ish color for highlights */
     
-    --first-color: rgb(110, 87, 224);
-    --first-color-hover: rgb(57, 45, 119);
+    --first-color: rgb(110, 87, 224); /* Main purple color */
+    --first-color-hover: rgb(57, 45, 119); /* Darker purple for hover */
 
-    --second-color: rgb(110, 87, 224);
-    --third-color: rgb(39, 39, 39);
-    --first-shadow-color: rgba(0, 0, 0, 0.1);
+    --second-color: rgb(110, 87, 224); /* Same purple for accents */
+    --third-color: rgb(39, 39, 39); /* Dark gray for backgrounds */
+    --first-shadow-color: rgba(0, 0, 0, 0.1); /* Subtle shadow for stuff */
 }
 
-/* ----- BASE ----- */
+/* ----- Base Styles ----- */
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; /* No weird padding/margin creeping in */
+    font-family: 'Poppins', sans-serif; /* Font time */
 }
 
-/* ----- SMOOTH SCROLL ----- */
+/* ----- Smooth scroll but i dont think its doing anything ----- */
 html{
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; 
 }
 
-/* ----- CHANGE THE SCROLL BAR DESIGN ----- */
+/* ----- Scrollbar looks a bit better now ----- */
 ::-webkit-scrollbar{
     width: 10px;
-    border-radius: 25px;
+    border-radius: 25px; /* A little rounded */
 }
 ::-webkit-scrollbar-track{
-    background: #fff;
+    background: #fff; /* Light background for the track */
 }
 ::-webkit-scrollbar-thumb{
-    background: #949494;
-    border-radius: 30px;
+    background: #949494; 
+    border-radius: 30px; /* Rounded thumb */
 }
 ::-webkit-scrollbar-thumb:hover{
-    background: #949494;
+    background: #949494; /* Keeping it simple when hovering */
 }
 
-/* ---##-- REUSABLE CSS --##--- */
-
-/* ----- GLOBAL BUTTON DESIGN ----- */
+/* --okie odkie ----- */
 .btn{
     font-weight: 500;
-    padding: 12px 20px;
-    background: #efefef;
+    padding: 12px 20px; /* look clickable */
+    background: #efefef; /* Light background for buttons */
     border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: .4s;
+    border-radius: 10px; /* Rounded edges cause that’s nice */
+    cursor: pointer; /* Mouse pointer changes to hand,  */
+    transition: .4s; /* Smooth transition for hovering */
 }
 .btn>i{
-    margin-left: 10px;
+    margin-left: 10px; /* Space between icon and text */
 }
 .btn:hover{
-    background: var(--second-color);
-    color: var(--color-white);
+    background: var(--second-color); /* Hover color changes */
+    color: var(--color-white); /* Text color changes on hover */
 }
 
-/* ----- GLOBAL ICONS DESIGN ----- */
+/* ----- Icons get a basic size adjustment ----- */
 i{
-    font-size: 16px;
+    font-size: 16px; /* So the icons aren't massive (yk what else is massive tho) or tiny */
 }
 
-/* ------- BASE -------- */
+/* ----- Basic body and container setup ----- */
 body{
-    background: var(--body-color);
+    background: var(--body-color); /* Use that dark body color */
 }
 .container{
     width: 100%;
-    position: relative;
+    position: relative; /* Just in case we need to position stuff */
 }
 
-/* ----- NAVIGATION BAR ----- */
+/* ----- Navigation bar: Floating above everything ----- */
 nav {
-    position: fixed;
+    position: fixed; /* It stays at the top, floating */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Spread out the items */
     width: 100%;
-    height: 90px;
-    line-height: 90px;
-    background: transparent; /* Make the background transparent */
-    padding-inline: 9vw;
-    transition: .3s;
-    z-index: 100;
+    height: 90px; /* Give it some height */
+    line-height: 90px; /* Center the items vertically */
+    background: transparent; /* Transparent background for sleekness */
+    padding-inline: 9vw; /* Padding on sides to make it look centered */
+    transition: .3s; /* Smooth transition on scrolling */
+    z-index: 100; /* Keep it on top of everything */
 }
 
 .nav-logo {
@@ -100,36 +97,39 @@ nav {
 
 .nav-name {
     font-size: 30px;
-    font-weight: 600;
-    color: var(--text-color-third);
+    font-weight: 600; /* Big and bold for logo name */
+    color: var(--text-color-third); /* Purple text */
 }
 
 .nav-logo span {
     position: absolute;
     top: -15px;
-    right: -20px;
-    font-size: 5em;
-    color: var(--text-color-second);
+    right: -20px; /* Placing the "icon" near the logo */
+    font-size: 5em; /* Big icon */
+    color: var(--text-color-second); /* White color for the icon */
 }
 
+/* Navigation menu stuf\ */
 .nav-menu,
 .nav_menu_list {
     display: flex;
 }
 
 .nav-menu .nav_list {
-    list-style: none;
+    list-style: none; /* Get rid of the default list styling */
     position: relative;
 }
 
+/* ----- Links in the navbar ----- */
 .nav-link {
-    text-decoration: none;
-    color: var(--text-color-second);
+    text-decoration: none; /* No underlines pls */
+    color: var(--text-color-second); /* White text */
     font-weight: 500;
     padding-inline: 15px;
-    margin-inline: 20px;
+    margin-inline: 20px; /* Space between links */
 }
 
+/* Navbar button for mobile, hidden by default */
 .nav-menu-btn {
     display: none;
 }
@@ -139,14 +139,15 @@ nav {
     cursor: pointer;
 }
 
+/* ----- i forogo*/
 .active-link {
     position: relative;
-    color: var(--first-color);
-    transition: .3s; /* Added 's' after .3 */
+    color: var(--first-color); /* Highlight with purple */
+    transition: .3s;
 }
 
 .active-link::after {
-    content: '';
+    content: ''; /* Tiny dot under active link */
     position: absolute;
     left: 50%;
     bottom: -15px;
@@ -157,34 +158,34 @@ nav {
     border-radius: 50%;
 }
 
-/* Blur effect behind navigation bar */
+/* ----- Blurry background behind navbar ----- */
 nav::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100px; /* Adjust height to match your navigation bar height */
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent white */
-    backdrop-filter: blur(10px); /* Adjust blur intensity as needed */
-    z-index: -1; /* Behind the content, but above the background */
+    height: 100px; /* Height of navbar */
+    background: rgba(0, 0, 0, 0.5); /* Semi-dark background */
+    backdrop-filter: blur(10px); /* Adds blur behind navbar */
+    z-index: -1; /* Keeps it behind the navbar */
 }
 
-/* ----- WRAPPER DESIGN ----- */
+/* ----- Wrapping content and setting some margins ----- */
 .wrapper{
-    padding-inline: 10vw;
+    padding-inline: 10vw; /* Space around content */
 }
 
-/* ----- FEATURED BOX ----- */
+/* ----- Featured section (for banners or big stuff) ----- */
 .featured-box{
     position: relative;
     display: flex;
     align-items: center;
     height: 100vh;
-    min-height: 700px;
+    min-height: 700px; /* At least a good size */
 }
 
-/* ----- FEATURED TEXT BOX ----- */
+/* ----- Featured text box setup ----- */
 .featured-text{
     position: relative;
     display: flex;
@@ -192,430 +193,52 @@ nav::before {
     align-content: center;
     flex-direction: column;
     width: 50%;
-    padding-right: 20px;
+    padding-right: 20px; /* Add some padding to the right */
 }
 .featured-text-card span{
-    background: var(--third-color);
-    color: var(--color-white);
-    padding: 3px 8px    ;
+    background: var(--third-color); /* Dark background */
+    color: var(--color-white); /* White text */
+    padding: 3px 8px;
     font-size: 12px;
     border-radius: 5px;
 }
 .featured-name{
     font-size: 50px;
     font-weight: 600;
-    color: var(--text-color-second);
+    color: var(--text-color-second); /* White text for name */
     margin-block: 20px;
 }
 .typedText{
-    text-transform: capitalize;
-    color: var(--text-color-third);
-    white-space: nowrap; /* Ensures text does not wrap */
-    overflow: hidden; /* Prevents overflow */
-    text-overflow: ellipsis; /* Shows ellipsis (...) when text overflows */
+    text-transform: capitalize; /* Capitalize text */
+    color: var(--text-color-third); /* Purple color */
+    white-space: nowrap; /* No wrapping text */
+    overflow: hidden; /* Don't let text spill out */
+    text-overflow: ellipsis; /* Show "..." when it overflows */
 }
 .featured-text-info{
     font-size: 15px;
     width:1000px;
     margin-bottom: 30px;
-    color: var(--text-color-second);
+    color: var(--text-color-second); /* White text */
 }
 .featured-text-btn{
     display: flex;
-    gap: 20px;
+    gap: 20px; /* Space out buttons */
 }
 .featured-text-btn>.blue-btn{
-    background: var(--first-color);
-    color: var(--color-white);
+    background: var(--first-color); /* Purple button */
+    color: var(--color-white); /* White text on button */
 }
 .featured-text-btn>.blue-btn:hover{
-    background: var(--first-color-hover);
+    background: var(--first-color-hover); /* Darker purple when hovered */
 }
-.social_icons{
-    display: flex;
-    margin-top: 5em;
-    gap: 30px;
-}
-.icon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-}
-.icon:hover{
-    color: var(--first-color);
-}
-/* ----- FEATURED IMAGE BOX ----- */
+
+/* ----- Featured image box (make sure it fits) ----- */
 .featured-image {
-    max-width: 60%;
-    max-height: 80vh;
+    max-width: 60%; /* Limit width */
+    max-height: 80vh; /* Limit height */
     width: 2000px;
     height: 2000px;
     margin-left: 20px;
-    object-fit: contain;
-}
-
-
-.scroll-btn{    
-   position: absolute;
-   bottom: 0;
-   left: 50%;
-   translate: -50%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 150px;
-   height: 50px;
-   gap: 5px;
-   text-decoration: none;
-   color: var(--body-color);
-   background: var(--color-white);
-   border-radius: 30px;
-   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
-}
-.scroll-btn i{
-    font-size: 20px;
-}
-
-/* ----- MAIN BOX ----- */
-.section{
-    padding-block: 5em;
-}
-.row{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    gap: 50px;
-}
-.col{
-    display: flex;
-    width: 50%;
-}
-
-/* -- ## --- RESUABLE CSS -- ## -- */
-.top-header{
-    text-align: center;
-    margin-bottom: 5em;
-}
-.top-header h1{
-    font-weight: 600;
-    color: var(--text-color-second);
-    margin-bottom: 10px;
-}
-.top-header span{
-    color: #999;
-}
-h3{
-    font-size: 20px;
-    font-weight: 600;
-    color: var (--text-color-second);
-    margin-bottom: 15px;
-}
-
-/* ----- ABOUT INFO ----- */
-.about-info{
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-block: 30px 70px;
-    padding-inline: 20px;
-    width: 100%;
-    background: var(--color-white);
-    box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
-    border-radius: 20px;
-}
-.about-info p{
-    text-align: center;
-    font-size: 15px;
-    color: #777;
-}
-.about-btn button{
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    background: var(--first-color);
-    color: var(--color-white);
-    border-radius: 30px;
-}
-.about-btn button:hover{
-    background: var(--first-color-hover);
-}
-
-/* ----- ABOUT / SKILLS BOX ----- */
-.skills-box{
-    margin: 10px;
-}
-.skills-header{
-    margin-bottom: 30px;
-    color: var(--color-white)
-}
-.skills-list{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-}
-.skills-list span{
-    font-size: 14px;
-    background: var(--first-color);
-    color: var(--color-white);
-    padding: 2px 10px;
-    border-radius: 5px;
-}
-
-/* ----- PROJECTS BOX ----- */
-.project-container {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.project-box {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 30%;
-    height: 350px;
-    background: var(--color-white);
-    border-radius: 20px;
-    box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
-    overflow: hidden;
-    transition: box-shadow 0.4s ease;  /* Smooth transition for box-shadow */
-}
-
-.project-box img {
-    max-width: 100%;
-    max-height: 150px;  /* Ensure the image doesn't exceed a certain height */
-    margin-bottom: 15px;  /* Adjust margin as needed */
-}
-
-.project-box>i {
-    font-size: 50px;
-    color: rgb(110, 87, 224);
-    margin-bottom: 15px;  /* Adjust margin as needed */
-    z-index: 2;  /* Ensure icon is above overlay */
-}
-
-.project-box h3 {
-    margin-bottom: 10px;  /* Adjust margin as needed */
-    z-index: 2;  /* Ensure header is above overlay */
-}
-
-.project-box label {
-    font-size: 15px;
-    color: #777;
-    margin-top: 5px;  /* Adjust margin as needed */
-    z-index: 2;  /* Ensure text is above overlay */
-}
-
-/* Hover effect for removing the overlay and adding glow */
-.project-box:hover::before {
-    background: rgba(255, 255, 255, 0);  /* Remove translucent overlay */
-}
-
-.project-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.3);  /* Lighter translucent white overlay */
-    transition: background 0.4s ease;  /* Smooth transition for background */
-    z-index: 1;
-}
-
-
-/* ----- CONTACT BOX ----- */
-.contact-info{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 30px;
-    width: 100%;
-    height: 315px;
-    background: var(--second-color);
-    border-radius: 10px;
-    box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
-    overflow: hidden;
-}
-.contact-info>h2{
-    color: var(--color-white);
-    margin-bottom: 20px;
-}
-.contact-info>p{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--color-white);
-    margin-block: 5px;
-}
-.contact-info p>i{
-    font-size: 18px;
-}
-
-/* ----- CONTACT FORM ----- */
-
-
-.form-control{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-}
-.form-inputs{
-    display: flex;
-    gap: 10px;
-    width: 100%;
-}
-.input-field{
-    width: 50%;
-    height: 55px;
-    background: white;
-    border: 2px solid #AAA;
-    border-radius: 10px;
-    padding-inline: 20px;
-    outline: none;
-}
-textarea{
-    width: 100%;
-    height: 250px;
-    background: white;
-    border: 2px solid #AAA;
-    border-radius: 10px;
-    padding: 15px 20px;
-    outline: none;
-    resize: none;
-}
-.form-button>.btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--second-color);
-    color: var(--color-white);
-}
-.form-button>.btn:hover{
-    background: rgb(57, 45, 119);
-}
-.form-button i{
-    font-size: 18px;
-    rotate: -45deg;
-}
-
-/* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
-@media only screen and (max-width: 1024px){
-    .featured-text{
-        padding: 0;
-    }
-    .image, .image img{
-        width: 320px;
-        height: 320px;
-    }
-}
-
-/* ----- MEDIA QUERY == 900px / RESPONSIVE ----- */
-@media only screen and (max-width: 900px){}
-    .nav-button{
-        display: none;
-    
-    .nav-menu.responsive{
-        left: 0;
-    }
-    .nav-menu{
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(20px);
-        width: 100%;
-        min-height: 450px;
-        height: 90vh;
-        transition: .3s;
-    }
-    .nav_menu_list{
-        flex-direction: column;
-    }
-    .nav-menu-btn{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .featured-box{
-        flex-direction: column;
-        justify-content: center;
-        height: 100vh;
-    }
-    .featured-text{
-        width: 100%;
-        order: 2;
-        justify-content: center;
-        align-content: flex-start;
-        min-height: 60vh;
-    }
-    .social_icons{
-        margin-top: 2em;
-    }
-    .featured-image{
-        order: 1;
-        justify-content: center;
-        min-height: 150px;
-        width: 100%;
-        margin-top: 65px;
-    }
-    .image, .image img{
-        width: 150px;
-        height: 150px;
-    }
-    .row{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 50px;
-    }
-    .col{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-    .about-info, .contact-info{
-        width: 100%;
-    }
-    .project-container{
-        justify-content: center;
-    }
-    .project-box{
-        width: 80%;
-    }
-
-}
-
-/* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
-
-@media only screen and (max-width: 540px){
-    .featured-name{
-        font-size: 40px;
-    }
-    .project-box{
-        width: 100%;
-    }
-    .form-inputs{
-        flex-direction: column;
-    }
-    .input-field{
-        width: 100%;
-    }
-    
+    object-fit: contain; /* Keep image aspect ratio */
 }
