@@ -1,1 +1,1 @@
-half of this code isnt chatgpt trust
+system.out.println("hello world"); or sum like that idk
